@@ -6,6 +6,7 @@ const Navbar = () => {
 
     const manuItems = <>
         <li><CustomLink to='/home'>Home</CustomLink></li>
+        <li><CustomLink to='/parts'>Parts</CustomLink></li>
         <li><CustomLink to='/reviews'>Reviews</CustomLink></li>
         <li><CustomLink to='/about'>About</CustomLink></li>
         <li><CustomLink to='/appointment'>Dashboard</CustomLink></li>
@@ -26,7 +27,7 @@ const Navbar = () => {
                         {manuItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                <a className="btn btn-ghost normal-case text-xl">C&A Hardware Tools Co., Ltd.</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
