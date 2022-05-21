@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; 
 import CustomLink from './CustomLink';
 
 const Navbar = () => {
