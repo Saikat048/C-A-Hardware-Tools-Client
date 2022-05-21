@@ -19,7 +19,7 @@ const Login = () => {
                     <p>Don't have with me? <Link to='/signup' className='text-secondary hover:underline'>Sign Up</Link></p>
                     <p className='text-secondary cursor-pointer hover:underline'>Forgot password?</p>
                     <div className="divider">OR</div>
-                    <button className="btn btn-primary">Button</button>
+                    <button className="btn btn-primary">Continue With Google</button>
                 </div>
             </div>
         </div>
