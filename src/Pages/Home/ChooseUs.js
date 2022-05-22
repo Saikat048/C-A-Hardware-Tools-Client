@@ -5,7 +5,7 @@ const ChooseUs = () => {
         <div>
             <h1 className='text-center text-4xl text-primary mb-2'>WHY CHOOSE US</h1>
             <hr className='text-primary hr' />
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-16 gap-8'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-16 gap-8 mb-20'>
                 <div>
                     <h4 className='text-2xl mb-2'>10-Year Experience</h4>
                     <p>With 10-years’ experience in hand tools, C&A Hardware Tools has become a leading manufacturer of high-quality, user friendly and ergonomic cable tools and pipe tools for professional users. With a commitment of manufacturing high quality and affordable tools, C&A Hardware values the importance of quality management which is the foundation of winning the trust of customers.</p>
