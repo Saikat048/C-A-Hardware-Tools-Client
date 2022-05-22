@@ -8,6 +8,10 @@ import Blogs from './Pages/Blogs/Blogs';
 import Error from './Pages/Shared/Error'; 
 import Parts from './Pages/Parts/Parts';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import MyOrders from './Pages/Dashboard/MyOrders';
+import AddAReview from './Pages/Dashboard/AddAReview';
+import MyProfile from './Pages/Dashboard/MyProfile';
 
 function App() {
   return (
@@ -19,6 +23,13 @@ function App() {
         <Route path="/parts" element={<RequireAuth>
           <Parts></Parts>
         </RequireAuth>}></Route> 
+        <Route path="dashboard" element={<RequireAuth>
+          <Dashboard></Dashboard>
+        </RequireAuth>}>
+          <Route index element={<MyOrders></MyOrders>}></Route>
+          <Route path="addareview" element={<AddAReview></AddAReview>}></Route>
+          <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
+        </Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>

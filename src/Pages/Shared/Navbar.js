@@ -10,7 +10,7 @@ const Navbar = () => {
     const [user, loading] = useAuthState(auth);
 
     if(loading){
-        <Loading></Loading>
+       <Loading></Loading>;
     }
 
     const logout = () => {
@@ -20,10 +20,11 @@ const Navbar = () => {
     const manuItems = <>
         <li><CustomLink to='/home'>Home</CustomLink></li>
         <li><CustomLink to='/parts'>Parts</CustomLink></li>
-        <li><CustomLink to='/reviews'>Reviews</CustomLink></li>
-        <li><CustomLink to='/about'>About</CustomLink></li>
-        <li><CustomLink to='/appointment'>Dashboard</CustomLink></li>
+        <li><CustomLink to='/about'>About</CustomLink></li> 
         <li><CustomLink to='/blogs'>Blogs</CustomLink></li>
+        {
+            user &&  <li><CustomLink to='/dashboard'>Dashboard</CustomLink></li>
+        }
         {
             user ? <li><CustomLink onClick={logout} to='/login'>Log Out</CustomLink></li>
             :
