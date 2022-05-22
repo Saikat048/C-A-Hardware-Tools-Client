@@ -1,8 +1,21 @@
+import { signOut } from 'firebase/auth';
 import React from 'react'; 
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 import CustomLink from './CustomLink';
+import Loading from './Loading';
 
 const Navbar = () => {
 
+    const [user, loading] = useAuthState(auth);
+
+    if(loading){
+        <Loading></Loading>
+    }
+
+    const logout = () => {
+        signOut(auth);
+      };
 
     const manuItems = <>
         <li><CustomLink to='/home'>Home</CustomLink></li>
@@ -11,7 +24,13 @@ const Navbar = () => {
         <li><CustomLink to='/about'>About</CustomLink></li>
         <li><CustomLink to='/appointment'>Dashboard</CustomLink></li>
         <li><CustomLink to='/blogs'>Blogs</CustomLink></li>
-        <li><CustomLink to='/login'>Login</CustomLink></li>
+        {
+            user ? <li><CustomLink onClick={logout} to='/login'>Log Out</CustomLink></li>
+            :
+            <li><CustomLink to='/login'>Login</CustomLink></li>
+
+        }
+        
 
     </>
 

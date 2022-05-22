@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../src/firebase.init';
+import Loading from '../Shared/Loading';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -19,12 +22,32 @@ const Login = () => {
         setPassword(event.target.value)
     }
 
-
     const handleFormSubmit = event => {
         event.preventDefault();
         signInWithEmailAndPassword(email, password)
     }
+    
+    if(loading || gLoading){
+        <Loading></Loading>
+    }
 
+ 
+    const navigate = useNavigate();
+    const location = useLocation(); 
+  
+    const from = location.state?.from?.pathname || "/";
+
+    if(user || gUser){
+        navigate(from, { replace: true });
+    }
+
+
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail( auth );
+
+    const resetPassword = async () => {
+        await sendPasswordResetEmail(email);
+        toast('Sent email');
+      } 
 
     return (
         <div className='flex justify-center items-center h-screen'>
@@ -36,12 +59,13 @@ const Login = () => {
                         <input onBlur={handleEmailBlur} type="text" placeholder="Your Email" className="input input-bordered w-full max-w-xs mb-4 mt-1" required/>
 
                         <label>Password</label>
-                        <input onBlur={handlePasswordBlur} type="text" placeholder="Your Password" className="input input-bordered w-full max-w-xs mb-4 mt-1" required/>
+                        <input onBlur={handlePasswordBlur} type="password" placeholder="Your Password" className="input input-bordered w-full max-w-xs mb-4 mt-1" required/>
 
                         <input type="submit" value="Submit" className="btn btn-primary w-full max-w-xs" />
                     </form>
+                    <ToastContainer />
                     <p>Don't have with me? <Link to='/signup' className='text-secondary hover:underline'>Sign Up</Link></p>
-                    <p className='text-secondary cursor-pointer hover:underline'>Forgot password?</p>
+                    <p onClick={resetPassword} className='text-secondary cursor-pointer hover:underline'>Forgot password?</p>
                     <div className="divider">OR</div>
                     <button onClick={() => signInWithGoogle()} className="btn btn-primary">Continue With Google</button>
                 </div>
