@@ -1,11 +1,13 @@
+import { sendEmailVerification } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
 
 const Signup = () => {
 
-    const [createUserWithEmailAndPassword,  user, loading] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword,  user, loading] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
 
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
@@ -24,6 +26,10 @@ const Signup = () => {
         setConfirmPassword(event.target.value);
     }
 
+    if(loading){
+        return <Loading></Loading>
+    }
+
     const handleFormSubmit = event => {
         event.preventDefault();
         if(password !== confirmPassword){
@@ -35,7 +41,8 @@ const Signup = () => {
             return;
          }
 
-         createUserWithEmailAndPassword(email, password)
+         createUserWithEmailAndPassword(email, password);
+         sendEmailVerification()
     }
 
     if(user){

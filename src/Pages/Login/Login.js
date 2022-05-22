@@ -11,6 +11,11 @@ const Login = () => {
 
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
 
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail( auth );
+ 
+    const navigate = useNavigate();
+    const location = useLocation(); 
+
 
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
@@ -28,12 +33,9 @@ const Login = () => {
     }
     
     if(loading || gLoading){
-        <Loading></Loading>
+        return <Loading></Loading>
     }
 
- 
-    const navigate = useNavigate();
-    const location = useLocation(); 
   
     const from = location.state?.from?.pathname || "/";
 
@@ -41,8 +43,6 @@ const Login = () => {
         navigate(from, { replace: true });
     }
 
-
-    const [sendPasswordResetEmail] = useSendPasswordResetEmail( auth );
 
     const resetPassword = async () => {
         await sendPasswordResetEmail(email);
