@@ -2,7 +2,7 @@ import React from 'react';
 
 const Supplier = () => {
     return (
-        <div className='flex justify-center'>
+        <div className='flex justify-center mb-12'>
             <div class="card w-100 bg-base-100 shadow-xl">
                 <div class="card-body">
                     <h3 className='text-center text-2xl text-primary mb-8'>Send your message to this supplier</h3>
