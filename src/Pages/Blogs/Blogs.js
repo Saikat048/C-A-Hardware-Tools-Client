@@ -1,13 +1,14 @@
 import React from 'react';
+import Footer from '../Shared/Footer';
 
 const Blog = () => {
     return (
         <div>
-            <div className='text-center blogs px-60'>
+            <div className='text-center blogs px-60 mb-20'>
                 <h1 className='mb-14 mt-10 text-3xl font-bold text-center'>Blogs</h1>
 
                 <h4 className='mb-4'><b>Question-1</b>: How will you improve the performance of a React Application...?</h4>
-                <p className='mb-10'><b>Answer :</b>Get insights into how your app performs from your users' point of view. Firebase Performance Monitoring gives you realtime & customized performance tracing. Build Extraordinary Apps. Release Apps Confidently. Accelerate Development. Keeping component state local where necessary. Memoizing React components to prevent unnecessary re-renders. Code-splitting in React using dynamic import(). Windowing or list virtualization in React. Lazy loading images in React.</p>
+                <p className='mb-10'><b>Answer :</b> Get insights into how your app performs from your users' point of view. Firebase Performance Monitoring gives you realtime & customized performance tracing. Build Extraordinary Apps. Release Apps Confidently. Accelerate Development. Keeping component state local where necessary. Memoizing React components to prevent unnecessary re-renders. Code-splitting in React using dynamic import(). Windowing or list virtualization in React. Lazy loading images in React.</p>
 
                 <h4 className='mb-4'><b>Question-2</b>: What are the different ways to manage a state in a React application...?</h4>
                 <p className='mb-10'><b>Answer :</b>There are four main types of state you need to properly manage in your React apps: 1. Local state.  2. Global state. 3. Server state.  4. URL state.</p>
@@ -24,6 +25,7 @@ const Blog = () => {
                 <h4 className='mb-4'><b>Question-5.2</b>: Why should write unit tests...?</h4>
                 <p className='mb-10'><b>Answer :</b> Unit testing allows software developers to actually think through the design of the software and what has to be done before they write the code. This can help them to stay focused and can also help them to create much better designs.</p>
             </div>
+            <Footer></Footer>
         </div>
     );
 };
