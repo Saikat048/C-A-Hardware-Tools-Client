@@ -12,6 +12,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import AddAReview from './Pages/Dashboard/AddAReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
+import PartDetail from './Pages/Parts/PartDetail';
 
 function App() {
   return (
@@ -22,8 +23,12 @@ function App() {
         <Route path="/home" element={<Home></Home>}></Route> 
         <Route path="/parts" element={<RequireAuth>
           <Parts></Parts>
-        </RequireAuth>}></Route> 
-        <Route path="dashboard" element={<RequireAuth>
+        </RequireAuth>}></Route>
+        <Route path="/parts/:partId" element={<RequireAuth>
+          <PartDetail></PartDetail>
+        </RequireAuth>}></Route>
+
+         <Route path="dashboard" element={<RequireAuth>
           <Dashboard></Dashboard>
         </RequireAuth>}>
           <Route index element={<MyOrders></MyOrders>}></Route>

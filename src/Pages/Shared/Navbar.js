@@ -19,7 +19,7 @@ const Navbar = () => {
 
     const manuItems = <>
         <li><CustomLink to='/home'>Home</CustomLink></li>
-        <li><CustomLink to='/parts'>Parts</CustomLink></li>
+        <li><CustomLink to='/parts'>Tools</CustomLink></li>
         <li><CustomLink to='/about'>About</CustomLink></li> 
         <li><CustomLink to='/blogs'>Blogs</CustomLink></li>
         {
@@ -47,12 +47,15 @@ const Navbar = () => {
                         {manuItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">C&A Hardware Tools Co., Ltd.</a>
+                <a className="btn btn-ghost normal-case text-xl">C&A Hardware Tools</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     {manuItems}
                 </ul>
+            </div>
+            <div className="navbar-end">
+            <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">>></label>
             </div>
         </div>
     );
