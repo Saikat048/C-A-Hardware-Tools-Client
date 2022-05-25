@@ -55,7 +55,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-            <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">>></label>
+            <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">></label>
             </div>
         </div>
     );
