@@ -10,7 +10,8 @@ const PartDetail = () => {
     console.log(partId)
     const [user] = useAuthState(auth);
 
-    const [price, setPrice] = useState()
+    const [price, setPrice] = useState(0);
+    // const [quantity, setQuantity] = useState(0);
 
     const [tools, setTools] = useState({});
     console.log(tools)
@@ -22,10 +23,16 @@ const PartDetail = () => {
             .then(data => setTools(data))
     }, [])
 
+    const handleQuantity = event => {
+        const count = parseInt(event.target.value);
+        const total = count * tools.price;
+        setPrice(total)   
+    }
+
     const handleFormSubmit = event => {
         event.preventDefault();
         const name = event.target.name.value;
-        const quantity = parseInt(event.target.quantity.value)
+        const quantity = event.target.quantity.value;
         const email = event.target.email.value;
         const address = event.target.address.value;
         const phone = parseInt(event.target.phone.value);
@@ -34,13 +41,10 @@ const PartDetail = () => {
         if (quantity < tools.minimumOrder || quantity > tools.available) {
             alert('not valid number')
             event.target.reset();
+            setPrice('')
             return;
         }
-
-        
-        const totalPrice = quantity * tools.price;
-        setPrice(totalPrice)
-
+ 
 
         const order = { name, email, address, phone, quantity, price }
         console.log(order)
@@ -55,7 +59,9 @@ const PartDetail = () => {
             .then(response => response.json())
             .then(data => {
                 if (data) {
-                    toast('Order success')
+                    toast('Order success');
+                    event.target.reset();
+                    setPrice('')
                 }
             })
     }
@@ -94,7 +100,7 @@ const PartDetail = () => {
                                         <input name="address" type="text" placeholder="Your Address" className="input input-bordered w-full max-w-xs mb-2" required />
                                         <input name="phone" type="Number" placeholder="Your Phone Number" className="input input-bordered w-full max-w-xs mb-2" required />
                                         <div>
-                                            <input name="quantity" type="Number" placeholder="Quantity" className="input input-bordered w-36 max-w-xs mr-8 mb-2" required />
+                                            <input name="quantity" onChange={handleQuantity} type="Number" placeholder="Quantity" className="input input-bordered w-36 max-w-xs mr-8 mb-2" required />
                                             <input name="price" placeholder='Total Price' value={price} className="input input-bordered w-36 max-w-xs mb-2"/>
                                         </div>
                                         <input type="submit" value="Order" className="btn btn-bordered w-full max-w-xs" />
