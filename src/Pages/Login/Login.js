@@ -39,8 +39,7 @@ const Login = () => {
   
     const from = location.state?.from?.pathname || "/";
 
-    if(user || gUser){
-        console.log(user || gUser)
+    if(user || gUser){ 
         navigate(from, { replace: true });
     }
 

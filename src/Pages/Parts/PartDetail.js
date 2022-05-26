@@ -7,14 +7,14 @@ import auth from '../../firebase.init';
 
 const PartDetail = () => {
     const { partId } = useParams();
-    console.log(partId)
+    // console.log(partId)
     const [user] = useAuthState(auth);
 
-    const [price, setPrice] = useState(0);
+    const [price, setPrice] = useState();
     // const [quantity, setQuantity] = useState(0);
 
     const [tools, setTools] = useState({});
-    console.log(tools)
+    // console.log(tools)
     useEffect(() => {
         const url = `https://fast-lowlands-57075.herokuapp.com/tools/${partId}`;
 
@@ -47,7 +47,7 @@ const PartDetail = () => {
  
 
         const order = { name, email, address, phone, quantity, price }
-        console.log(order)
+        // console.log(order)
 
         fetch('https://fast-lowlands-57075.herokuapp.com/order', {
             method: 'POST',

@@ -20,7 +20,7 @@ const MyOrders = () => {
 
         const proceed = window.confirm('Are you sure, You want to delete...?')
         if (proceed) {
-            console.log(id)
+            // console.log(id)
             const url = `https://fast-lowlands-57075.herokuapp.com/order/${id}`;
 
             fetch(url, {
@@ -28,7 +28,7 @@ const MyOrders = () => {
             })
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data)
+                    // console.log(data)
                     if (data.deletedCount > 0) {
                         const remaining = orders.filter(order => order._id !== id)
                         setOrders(remaining)
