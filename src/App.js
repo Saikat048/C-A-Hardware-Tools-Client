@@ -15,8 +15,9 @@ import MyProfile from './Pages/Dashboard/MyProfile';
 import PartDetail from './Pages/Parts/PartDetail';
 import UpdateProfile from './Pages/Dashboard/UpdateProfile'; 
 import Payment from './Pages/Dashboard/Payment';
-import Portfolio from './Pages/Portfolio/Portfolio';
-import AllReviews from './Pages/Home/AllReviews';
+import Portfolio from './Pages/Portfolio/Portfolio'; 
+import AllReviews from './Pages/Home/AllReviews'
+
 
 function App() {
   return (
@@ -39,9 +40,10 @@ function App() {
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path="addareview" element={<AddAReview></AddAReview>}></Route>
           <Route path="myprofile" element={<MyProfile></MyProfile>}></Route> 
+          <Route path="payment/:paymentId" element={<Payment></Payment>}></Route>
         </Route>
         <Route path="/updateprofile" element={<UpdateProfile></UpdateProfile>}></Route>
-        <Route path="/dashboard/payment/:paymentId" element={<Payment></Payment>}></Route>
+       
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>

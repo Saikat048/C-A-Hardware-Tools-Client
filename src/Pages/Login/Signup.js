@@ -30,6 +30,8 @@ const Signup = () => {
         return <Loading></Loading>
     }
 
+
+    // form submit 
     const handleFormSubmit = event => {
         event.preventDefault();
         if(password !== confirmPassword){
@@ -42,6 +44,8 @@ const Signup = () => {
          }
 
          createUserWithEmailAndPassword(email, password);
+         
+        //  email verification 
          sendEmailVerification()
     }
 

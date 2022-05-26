@@ -18,7 +18,7 @@ const AddAReview = () => {
         })
             .then(response => response.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 if (data) {
                     toast('Order success'); 
                     reset();

@@ -7,9 +7,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, gUser, gLoading ] = useSignInWithGoogle(auth);
 
-    const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+    const [signInWithEmailAndPassword, user, loading ] = useSignInWithEmailAndPassword(auth);
 
     const [sendPasswordResetEmail] = useSendPasswordResetEmail( auth );
  
@@ -27,6 +27,9 @@ const Login = () => {
         setPassword(event.target.value)
     }
 
+
+    // form submit 
+    
     const handleFormSubmit = event => {
         event.preventDefault();
         signInWithEmailAndPassword(email, password)
@@ -43,7 +46,9 @@ const Login = () => {
         navigate(from, { replace: true });
     }
 
-
+    
+    // reset password 
+ 
     const resetPassword = async () => {
         await sendPasswordResetEmail(email);
         toast('Sent email');
