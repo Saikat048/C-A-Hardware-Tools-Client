@@ -10,6 +10,8 @@ const PartDetail = () => {
     console.log(partId)
     const [user] = useAuthState(auth);
 
+    const [price, setPrice] = useState()
+
     const [tools, setTools] = useState({});
     console.log(tools)
     useEffect(() => {
@@ -27,14 +29,20 @@ const PartDetail = () => {
         const email = event.target.email.value;
         const address = event.target.address.value;
         const phone = parseInt(event.target.phone.value);
+        const price = parseInt(event.target.price.value);
 
-        if (quantity < tools.minimumOrder || quantity > tools.available) { 
+        if (quantity < tools.minimumOrder || quantity > tools.available) {
             alert('not valid number')
             event.target.reset();
             return;
         }
 
-        const order = {name, email, address, phone, quantity }
+        
+        const totalPrice = quantity * tools.price;
+        setPrice(totalPrice)
+
+
+        const order = { name, email, address, phone, quantity, price }
         console.log(order)
 
         fetch('http://localhost:5000/order', {
@@ -46,11 +54,13 @@ const PartDetail = () => {
         })
             .then(response => response.json())
             .then(data => {
-               if(data){
-                   toast('Order success')
-               }
+                if (data) {
+                    toast('Order success')
+                }
             })
     }
+
+
 
 
     return (
@@ -79,13 +89,16 @@ const PartDetail = () => {
                                 <h2 className='text-3xl text-center text-primary font-bold mb-8'>Purchase Now</h2>
                                 <div className="card-body">
                                     <form onSubmit={handleFormSubmit}>
-                                        <input disabled name="name" value={user.displayName} className="input input-bordered w-full max-w-xs mb-2" />
+                                        <input disabled name="name" value={tools.name} className="input input-bordered w-full max-w-xs mb-2" />
                                         <input disabled name="email" type="email" value={user.email} className="input input-bordered w-full max-w-xs mb-2" required />
                                         <input name="address" type="text" placeholder="Your Address" className="input input-bordered w-full max-w-xs mb-2" required />
                                         <input name="phone" type="Number" placeholder="Your Phone Number" className="input input-bordered w-full max-w-xs mb-2" required />
-                                        <input name="quantity" type="Number" placeholder="Quantity" className="input input-bordered w-full max-w-xs mb-2" required />
-                                        <input type="submit" value="Submit" className="btn btn-bordered w-full max-w-xs" />
-                                    </form> 
+                                        <div>
+                                            <input name="quantity" type="Number" placeholder="Quantity" className="input input-bordered w-36 max-w-xs mr-8 mb-2" required />
+                                            <input name="price" placeholder='Total Price' value={price} className="input input-bordered w-36 max-w-xs mb-2"/>
+                                        </div>
+                                        <input type="submit" value="Order" className="btn btn-bordered w-full max-w-xs" />
+                                    </form>
                                     <ToastContainer />
                                 </div>
                             </div>

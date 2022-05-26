@@ -13,7 +13,9 @@ import MyOrders from './Pages/Dashboard/MyOrders';
 import AddAReview from './Pages/Dashboard/AddAReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import PartDetail from './Pages/Parts/PartDetail';
-import UpdateProfile from './Pages/Dashboard/UpdateProfile';
+import UpdateProfile from './Pages/Dashboard/UpdateProfile'; 
+import Payment from './Pages/Dashboard/Payment';
+import Portfolio from './Pages/Portfolio/Portfolio';
 
 function App() {
   return (
@@ -34,12 +36,14 @@ function App() {
         </RequireAuth>}>
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path="addareview" element={<AddAReview></AddAReview>}></Route>
-          <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
+          <Route path="myprofile" element={<MyProfile></MyProfile>}></Route> 
         </Route>
         <Route path="/updateprofile" element={<UpdateProfile></UpdateProfile>}></Route>
+        <Route path="/dashboard/payment/:paymentId" element={<Payment></Payment>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+        <Route path="/portfolio" element={<Portfolio></Portfolio>}></Route>
         <Route path="/*" element={<Error></Error>}></Route>
       </Routes>
     </div>

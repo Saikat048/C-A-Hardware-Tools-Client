@@ -29,7 +29,7 @@ const Summary = () => {
 
                 </div>
                 <div className="card w-100 bg-base-100 shadow-xl">
-                    <div className='grid grid-cols-1 grid-cols-4 items-center'>
+                    <div className='grid grid-cols-1 lg:grid-cols-4 items-center'>
                         <div className="card-body col-span-2">
                             <h2 className='text-3xl font-bold text-primary'>Have any question about us or ger a products request ? </h2>
                             <h4 className='text-2xl font-bold'>Don't hesitate to contact us</h4>

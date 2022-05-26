@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useParts from '../Hooks/CustomHook';
 import Part from '../Parts/Part';
-import './HomeParts.css'
+import './HomeParts.css';
+import { BsArrowRight } from 'react-icons/bs';
 
 const HomeParts = () => {
     const [parts, setParts] = useParts();
@@ -13,6 +15,10 @@ const HomeParts = () => {
                 {
                     parts.slice(0, 6).map(part => <Part key={part._id} part={part}></Part>)
                 }
+            </div>
+            <div className='flex items-center mt-16'>
+            <Link className='text-2xl text-primary font-bold hover:underline' to="/parts">See All Tools </Link> 
+            <span className='ml-3 text-2xl text-primary font-bold'><BsArrowRight></BsArrowRight></span>
             </div>
         </div>
     );

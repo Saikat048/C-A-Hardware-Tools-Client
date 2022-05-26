@@ -1,70 +1,18 @@
-# Getting Started with Create React App
+ # C&A Hardware Tools
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+ ## Assalamu Alaikum Admin/Moderator
+- Prothome create react app diye ekta react app create korchi. kicu components create korchi. 
+- App.js file A router set korchi. ekta header (Navbar) create korchi, Navbar A link golo set korchi. Home page er requirements golo complete korchi.
+- User jodi log in kora thake ta hole tools detail A jete parbe R jodi log in kora na thake ta hole log in page A niye jabe. User login kora thekle tools detail A giye order korte parbe.
+- User jodi log in kora thake ta hole tools detail A jete parbe R jodi log in kora na thake ta hole log in page A niye jabe. User login kora thekle Navbar A thake dashboard page A jete parbe . dashboard A user er order golo dekhte parbe. payment korte parbe, order delete ooo korte parbe. 
+- User caile tar profail update korte parbe. review add korte parbe dashboard page theke.
+- User jodi sign up kora na thake ta hole log in page A sign up er link deya ache, sekhane giye email, password diye othoba 'sign in with google' diye ooo sign up korte parbe. Sign up er somoy user email A email verification code jabe tarpor user K tar email ta verify kore nite hobe. User login er por password vule gele password reset kore nite parbe. 
+- User log in chara home, my portfolio, blogs pages A jete pabe.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Web Site ta create korte ja ja use kora hoyeche...... 
+Tailwind, DaisyUI, Firebase, React-Firebase-Hooks, React-Hook-Form, React-Icons, Tailwind-Loader-Spinner, React-Router, React-Toastify, etc.
+ 
