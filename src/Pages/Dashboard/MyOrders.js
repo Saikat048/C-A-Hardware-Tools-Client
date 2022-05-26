@@ -8,7 +8,7 @@ const MyOrders = () => {
     // console.log(orders)
 
     useEffect(() => {
-        fetch('http://localhost:5000/order')
+        fetch('https://fast-lowlands-57075.herokuapp.com/order')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
@@ -21,7 +21,7 @@ const MyOrders = () => {
         const proceed = window.confirm('Are you sure, You want to delete...?')
         if (proceed) {
             console.log(id)
-            const url = `http://localhost:5000/order/${id}`;
+            const url = `https://fast-lowlands-57075.herokuapp.com/order/${id}`;
 
             fetch(url, {
                 method: 'DELETE'

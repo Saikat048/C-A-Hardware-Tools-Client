@@ -23,7 +23,7 @@ const UpdateProfile = () => {
         const info = { name, email, education, country, city, phone, link }
 
         console.log(info)
-        const url = `http://localhost:5000/info/${email}`
+        const url = `https://fast-lowlands-57075.herokuapp.com/info/${email}`
         fetch(url, {
             method: 'PUT',
             headers: {

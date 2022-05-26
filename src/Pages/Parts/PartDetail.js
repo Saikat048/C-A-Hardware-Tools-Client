@@ -15,7 +15,7 @@ const PartDetail = () => {
     const [tools, setTools] = useState({});
     console.log(tools)
     useEffect(() => {
-        const url = `http://localhost:5000/tools/${partId}`;
+        const url = `https://fast-lowlands-57075.herokuapp.com/tools/${partId}`;
 
         fetch(url)
             .then(res => res.json())
@@ -45,7 +45,7 @@ const PartDetail = () => {
         const order = { name, email, address, phone, quantity, price }
         console.log(order)
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://fast-lowlands-57075.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

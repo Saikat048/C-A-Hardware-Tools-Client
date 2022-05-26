@@ -8,7 +8,7 @@ const MyProfile = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/info')
+        fetch('https://fast-lowlands-57075.herokuapp.com/info')
             .then(res => res.json())
             .then(data => setInfo(data[0]))
     }, [])
