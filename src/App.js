@@ -16,6 +16,7 @@ import PartDetail from './Pages/Parts/PartDetail';
 import UpdateProfile from './Pages/Dashboard/UpdateProfile';  
 import Portfolio from './Pages/Portfolio/Portfolio'; 
 import AllReviews from './Pages/Home/AllReviews'
+import Payment from './Pages/Dashboard/Payment';
 
 
 function App() {
@@ -38,7 +39,8 @@ function App() {
         </RequireAuth>}>
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path="addareview" element={<AddAReview></AddAReview>}></Route>
-          <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>  
+          <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>   
+          <Route path="payment/:paymentId" element={<Payment></Payment>}></Route>   
         </Route>
         <Route path="/updateprofile" element={<UpdateProfile></UpdateProfile>}></Route>
        

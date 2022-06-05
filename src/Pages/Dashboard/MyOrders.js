@@ -13,8 +13,7 @@ const MyOrders = () => {
             .then(data => setOrders(data))
     }, [])
 
-
-
+ 
     const handleDelete = (id) => {
 
 
@@ -62,7 +61,7 @@ const MyOrders = () => {
                             <td>{order.phone}</td>
                             <td>{order.quantity}</td>
                             <td>
-                                {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className="btn btn-xs btn-primary">pay</button></Link>}
+                                {(order.price && !order.paid) && <Link  to={`/dashboard/payment/${order._id}`}><button className="btn btn-xs btn-primary">pay</button></Link>}
                                 {(order.price && order.paid) && <span className="text-primary">paid</span>}
                                 
                             </td>
