@@ -5,16 +5,16 @@ Live Website link
 
 
  ## Assalamu Alaikum Admin/Moderator
-- Prothome create react app diye ekta react app create korchi. kicu components create korchi. 
-- App.js file A router set korchi. ekta header (Navbar) create korchi, Navbar A link golo set korchi. Home page er requirements golo complete korchi.
-- User jodi log in kora thake ta hole tools detail A jete parbe R jodi log in kora na thake ta hole log in page A niye jabe. User login kora thekle tools detail A giye order korte parbe.
-- User jodi log in kora thake ta hole tools detail A jete parbe R jodi log in kora na thake ta hole log in page A niye jabe. User login kora thekle Navbar A thake dashboard page A jete parbe . dashboard A user er order golo dekhte parbe. payment korte parbe, order delete ooo korte parbe. 
-- User caile tar profail update korte parbe. review add korte parbe dashboard page theke.
-- User jodi sign up kora na thake ta hole log in page A sign up er link deya ache, sekhane giye email, password diye othoba 'sign in with google' diye ooo sign up korte parbe. Sign up er somoy user email A email verification code jabe tarpor user K tar email ta verify kore nite hobe. User login er por password vule gele password reset kore nite parbe. 
-- User log in chara home, my portfolio, blogs pages A jete pabe.
+- First I am creating an app with cteate react app. I am creating some components.
+- Setting the router in the App.js file. Creating a header ( Navbar ), setting some links in the Navbar. I am completing the requirements of the home page.
+- If the user in logged in then he can go to tools details and if he is not logged in then he will be taken to the login page. If the user is logged in, he cango to tools detail and place an order.
+- If the user is logged in, he will be able to go to the Dashboard page from Navbar. Go to the dashboard and see the user's orders. Can make payment, can also delete order.
+- User can update their profile if they want. User can add revirws from Dashboard.
+- If the user has not signed up then there is a link to sign up with email, password or sign in with Google. After signing up, an email verificaction message will be sent to the user's email, then the uset will have to verify his email. If the user forgers hos password, He will be able to reset the password.
+- Users can go to home, my portfolio, blogs page without logging in.
 
 
 
-### Web Site ta create korte ja ja use kora hoyeche...... 
+### What has been used to create the website...... 
 Tailwind, DaisyUI, Firebase, React-Firebase-Hooks, React-Hook-Form, React-Icons, Tailwind-Loader-Spinner, React-Router, React-Toastify, etc.
  
